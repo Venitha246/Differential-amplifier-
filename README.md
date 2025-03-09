@@ -105,22 +105,25 @@ Start the simulation by clicking Run to analyze the circuit's DC behavior.
 
 ## Design:
 Given P<=3mW
-**But we have considered P=2.5mW**
+**But we have considered P=3mW**
 since P=VddxIss;
 
-**Iss = P/Vdd = 2.5m/3.3 = 0.757mA**
+**Iss = P/Vdd = 3m/2.5 = 1.2mA**
 
 
-**Id1=Id2=Iss/2 = 0.37mA**
+**Id1=Id2=Iss/2 = 0.6mA**
 
 By Applying KVL :
 
 **Vdd-I1Rd-Vocm1=0**
-3.3 - 0.37 Rd - 1.81 = 0
-**Rd = 3.93kohm**
+2.5- 0.6m Rd - 1.4 = 0
+**Rd = 1.833kohm**
 
-**Rss=Vp/Iss = 0.7/0.757m**
+**Rss=Vp/Iss = 0.3/1.2m**
 
-Rss=0.924kohm
+Rss=250ohm
 
 ### Circuit 1
+
+
+
