@@ -309,4 +309,64 @@ The aim of AC analysis is to study the frequency-domain behavior of the MOS diff
 From the graph gain in dB scale is
 20log(3.143)=9.94dB
 
+## Inference
+By replacing ( R_3 ) with a current source (\( I_{ss} ), the circuit's performance significantly improved. This change increased the differential gain because there’s no source degeneration, allowing higher transconductance( g_m ) and better voltage gain ( A_d = g_m . r_d ). 
+
+The transient analysis showed a larger output signal and excellent linearity, with fast response times, making the circuit more suitable for high-speed operations. The active current source provided stable biasing, which also reduced sensitivity to component variations.
+
+In the frequency-domain (AC analysis), the circuit demonstrated higher gain and wider bandwidth compared to the original setup. The current source enhanced noise rejection by improving the common-mode rejection ratio (CMRR), making the amplifier better at handling real-world noise and interference.
+
+Overall, these upgrades confirmed that replacing ( R_3 ) with ( I_{ss} ) resulted in a more efficient, precise, and high-performing differential amplifier.
+
+
+## Circuit 3
+**Differential Amplifier with NMOS Current Source Biasing**
+
+This circuit features an improved differential amplifier where the traditional tail resistor is replaced with an NMOS transistor (M3) functioning as a current source. This modification enhances the stability and control of the bias current in the differential pair (M1 and M2), resulting in a more consistent operating point and improved common-mode rejection.
+
+By utilizing an active NMOS current source, the circuit achieves higher accuracy and stability in amplifying the difference between the input signals (V2 and V1). This method ensures better regulation of the bias current, which is crucial for applications demanding precise signal processing and strong resistance to common-mode noise. While maintaining its fundamental role of differential signal amplification, the circuit benefits from enhanced performance and reliability due to the active biasing approach.
+
+
+## Circuit Diagram
+
+
+
+## DC Analysis
+
+
+Mosfet aspect ratio was same ie, L= nm, W = um
+
+for mosfet M1 & M2:
+
+Vicm = 1.3V
+
+Vocm = 1.4V
+
+Id= 0.6mA
+
+Vtn = 0.487v
+
+VDD = IdRd + VDS +Vp
+
+2.5=0.6m(1.833k)+VDS+0.3
+
+VDS = 1.1002V
+
+The Q-point of both the mosfets are (1.1002V, 0.6mA).
+
+## Transient Analysis 
+
+
+In Circuit 3, we replaced the tail resistor with an NMOS transistor ( M_3 ) as a current source. This change makes the bias current more stable and keeps the circuit's operating point consistent. During transient analysis, the circuit showed improved performance.
+
+The gain of the amplifier increased because the NMOS current source gives a higher transconductance( g_m ). The output waveform was amplified well, with no distortion, and it responded quickly to input changes. The linearity of the circuit also improved because ( M_3 ) keeps the bias current steady.
+
+Additionally, the NMOS current source enhanced the circuit's ability to reject noise. This improvement in common-mode rejection makes the amplifier more reliable in handling real-world signals.
+
+From the above observation
+Gain Av=Vout(peak)/Vin(peak)
+Av= 0.3126/0.0974 = 3.209V/V
+Converting it to the decibel(dB):
+20log(3.209) = 10.127 dB
+
 
