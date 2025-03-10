@@ -28,8 +28,6 @@ The design process will involve selecting suitable MOSFET parameters, biasing co
 
 The extracted parameters will validate the design and provide insights into the amplifier's performance under varying conditions. This comprehensive study will not only satisfy the technical requirements but also highlight the practical considerations in designing robust analog circuits.
 
-## Circuit Diagram
-
 
 ## Working Principle of a MOS Differential Amplifier
 The **MOS differential amplifier** operates based on the principle of **differential signal amplification**, which involves amplifying the difference between two input signals while rejecting any common-mode signals (e.g., noise or interference).
@@ -125,10 +123,12 @@ Rss=250ohm
 
 ### Circuit 1
 
+![IMG_20250310_085834](https://github.com/user-attachments/assets/8d01a3c8-e7f1-43b2-bb3b-8b5fd1b4f84e)
 
 
 
 ## DC Analysis
+![1000133905](https://github.com/user-attachments/assets/c97196f5-be20-4c30-8f40-a614a8ecbeeb)
 
 
 
@@ -155,6 +155,7 @@ The Q-point of both the mosfets are (1.1002V, 0.6mA).
 
 ## Transient Analysis
 
+![1000133917](https://github.com/user-attachments/assets/f3e2d08b-a03d-42d2-95c3-eaec36793e66)
 
 
 The transient analysis of the MOS differential amplifier aims to evaluate its dynamic behavior and time-domain response when subjected to varying input signals. This analysis provides key insights into the amplifier's performance, including its ability to amplify signals linearly without distortion and its response to changes in input signals over time.
@@ -180,6 +181,7 @@ Converting it to the decibel(dB):
 20log(2.3009) = 7.237dB
 
 ## AC Analysis
+![1000133925](https://github.com/user-attachments/assets/22c59802-d599-4b9f-b9e1-95584257bfcd)
 
 
 
@@ -221,9 +223,14 @@ Overall, the amplifier meets all the design goals, offering high linearity, stab
 
 
 ## Circuit 2
+
+![IMG_20250310_085630](https://github.com/user-attachments/assets/7c3d6b9b-2ebb-4f98-997b-245d87e291f9)
+
+
 Replacing ( R3 ) with a current source ( Iss ) transforms the circuit into a fully differential pair with an active current source. This modification eliminates source degeneration, increasing the gain and improving common-mode rejection (CMRR). The current source ensures a stable bias current, making the circuit less sensitive to variations in component values. Without ( R3 ), the transconductance ( g_m ) is higher, resulting in a larger differential gain given by (Ad=gm*rd).
 
 ## DC Analysis
+![1000133923](https://github.com/user-attachments/assets/30508afc-8fdd-4d0c-a652-92326a570656)
 
 
 
@@ -249,6 +256,7 @@ VDS = 1.1002V
 The Q-point of both the mosfets are (1.1002V, 0.6mA).
 
 ## Transient Analysis
+![1000133921](https://github.com/user-attachments/assets/a9e4d369-a26c-4ab4-a2f2-53dc3d92f60e)
 
 
 
@@ -282,6 +290,7 @@ Converting it to the decibel(dB):
 
 ## AC Analysis
 
+![1000133919](https://github.com/user-attachments/assets/2909895b-0e4d-446c-9952-6407a9648483)
 
 
 
@@ -329,9 +338,12 @@ By utilizing an active NMOS current source, the circuit achieves higher accuracy
 
 ## Circuit Diagram
 
+![1000134015](https://github.com/user-attachments/assets/7b9b6382-aca1-48b0-9689-1cef3c73bd66)
 
 
 ## DC Analysis
+![1000133915](https://github.com/user-attachments/assets/60f6f58d-5f8a-4a1b-ba1b-84f48be6d8ed)
+
 
 
 Mosfet aspect ratio was same ie, L= 272nm, W = 5.2um
@@ -355,6 +367,7 @@ VDS = 1.1002V
 The Q-point of both the mosfets are (1.1002V, 0.6mA).
 
 ## Transient Analysis 
+![1000133913](https://github.com/user-attachments/assets/7a911a80-41d1-4b6a-a6cf-2d54df7115ce)
 
 
 In Circuit 3, we replaced the tail resistor with an NMOS transistor ( M_3 ) as a current source. This change makes the bias current more stable and keeps the circuit's operating point consistent. During transient analysis, the circuit showed improved performance.
@@ -370,6 +383,7 @@ Converting it to the decibel(dB):
 20log() =
 
 ## AC Analysis
+![1000133911](https://github.com/user-attachments/assets/2897f5b3-36c2-405a-bf68-a84de989cb47)
 
 
 
