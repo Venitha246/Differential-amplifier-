@@ -133,7 +133,7 @@ Rss=250ohm
 
 
 
-Mosfet aspect ratio was same ie, L= nm, W = um
+Mosfet aspect ratio was same ie, L=272 nm, W = 5.2um
 
 for mosfet M1 & M2:
 
@@ -175,9 +175,9 @@ The transient analysis of the MOS differential amplifier aims to evaluate its dy
 
   From the above observation
 Gain Av=Vout(peak)/Vin(peak)
-Av= 0.3126/0.0974 = 3.209V/V
+Av= 0.237/0.103= 2.3009
 Converting it to the decibel(dB):
-20log(3.209) = 10.127 dB
+20log(2.3009) = 7.237dB
 
 ## AC Analysis
 
@@ -208,7 +208,7 @@ Converting it to the decibel(dB):
    - **Phase Shift:** Analyze how the phase of the output signal varies with frequency.
    - **Gain-Bandwidth Product (GBW):** Calculate the product of the gain and bandwidth to assess the amplifier's performance.
  From the graph gain in dB scale is
-20log(3.209)=10.127dB
+20log(2.3009)=7.237dB
 
 ## Inference 
 From the analysis of the MOS differential amplifier, we can see how effectively the circuit performs. The transient analysis showed that the amplifier works well with time-varying signals, amplifying them cleanly without distortion. It also responds quickly to input changes, making it reliable for dynamic applications.
@@ -228,7 +228,7 @@ Replacing ( R3 ) with a current source ( Iss ) transforms the circuit into a ful
 
 
 
-Mosfet aspect ratio was same ie, L= nm, W = um
+Mosfet aspect ratio was same ie, L= 272nm, W = 5.2um
 
 for mosfet M1 & M2:
 
@@ -275,9 +275,9 @@ The transient analysis evaluates the time-domain response of the fully different
 
 From the above observation
 Gain Av=Vout(peak)/Vin(peak)
-Av= 0.3156/0.1004 = 3.143 V/V
+Av=  = V/V
 Converting it to the decibel(dB):
-20log(3.143) = 9.94 dB
+20log() = dB
 
 
 ## AC Analysis
@@ -307,7 +307,7 @@ The aim of AC analysis is to study the frequency-domain behavior of the MOS diff
    - Measure the differential output voltage ( V_{out+} - V_{out-} ) across the load resistors or active loads.
 
 From the graph gain in dB scale is
-20log(3.143)=9.94dB
+20log()=
 
 ## Inference
 By replacing ( R_3 ) with a current source (\( I_{ss} ), the circuit's performance significantly improved. This change increased the differential gain because there’s no source degeneration, allowing higher transconductance( g_m ) and better voltage gain ( A_d = g_m . r_d ). 
@@ -334,7 +334,7 @@ By utilizing an active NMOS current source, the circuit achieves higher accuracy
 ## DC Analysis
 
 
-Mosfet aspect ratio was same ie, L= nm, W = um
+Mosfet aspect ratio was same ie, L= 272nm, W = 5.2um
 
 for mosfet M1 & M2:
 
@@ -365,9 +365,9 @@ Additionally, the NMOS current source enhanced the circuit's ability to reject n
 
 From the above observation
 Gain Av=Vout(peak)/Vin(peak)
-Av= 0.3126/0.0974 = 3.209V/V
+Av= 0.3126/0.0974 =V/V
 Converting it to the decibel(dB):
-20log(3.209) = 10.127 dB
+20log() =
 
 ## AC Analysis
 
@@ -378,7 +378,7 @@ In Circuit 3, using an NMOS transistor ( M_3 ) as a current source instead of a 
 The circuit maintained good performance across a broader range of frequencies, showing a wider bandwidth compared to the previous configurations. The NMOS current source also significantly improved noise rejection by enhancing the common-mode rejection ratio (CMRR), making the circuit more effective at rejecting unwanted signals or noise.
 
 From the graph gain in dB scale is
-20log(3.209)=10.127dB
+20log()=dB
 
 ## Inference 
 By replacing the tail resistor with an NMOS transistor (\( M_3 \)) as a current source, Circuit 3 showed significant improvements. This modification provided better stability and control over the bias current, ensuring that the operating point remained consistent. 
