@@ -220,4 +220,93 @@ The amplifier also did a great job rejecting noise or common-mode signals, provi
 Overall, the amplifier meets all the design goals, offering high linearity, stability, and excellent noise rejection—ideal for applications requiring precise signal amplification.
 
 
+## Circuit 2
+Replacing ( R3 ) with a current source ( Iss ) transforms the circuit into a fully differential pair with an active current source. This modification eliminates source degeneration, increasing the gain and improving common-mode rejection (CMRR). The current source ensures a stable bias current, making the circuit less sensitive to variations in component values. Without ( R3 ), the transconductance ( g_m ) is higher, resulting in a larger differential gain given by (Ad=gm*rd).
+
+## DC Analysis
+
+
+
+
+Mosfet aspect ratio was same ie, L= nm, W = um
+
+for mosfet M1 & M2:
+
+Vicm = 1.3V
+
+Vocm = 1.4V
+
+Id= 0.6mA
+
+Vtn = 0.487v
+
+VDD = IdRd + VDS +Vp
+
+2.5=0.6m(1.833k)+VDS+0.3
+
+VDS = 1.1002V
+
+The Q-point of both the mosfets are (1.1002V, 0.6mA).
+
+## Transient Analysis
+
+
+
+The modification of replacing ( R_3 ) with a current source( I_{ss} )fundamentally enhances the MOS differential amplifier's performance. By eliminating source degeneration, the circuit achieves higher transconductance( g_m) and improved gain. 
+
+
+
+#### **Objective:**
+The transient analysis evaluates the time-domain response of the fully differential amplifier. It focuses on the increased differential gain and dynamic behavior resulting from the integration of an active current source.
+
+
+#### **Procedure:**
+1. **Circuit Setup:**
+   - Replace ( R_3 ) with a constant current source ( I_{ss}) to create a fully differential structure.
+   - Set the current source to provide a stable tail current, ensuring consistent biasing of the MOSFET pair.
+
+2. **Input Signal Configuration:**
+   - Apply a differential input signal (e.g., a sine wave with an amplitude of ( V_p = 0.3V) to the gates of the MOSFETs.
+   - Maintain the common-mode voltage at ( V_{icm} = 1.3V).
+
+3. **Transient Simulation:**
+   - Run a time-domain simulation over a sufficient period to observe multiple signal cycles.
+   - Measure the differential output voltage ( V_{out+} - V_{out-} ) at the drain terminals of the MOSFETs.
+
+From the above observation
+Gain Av=Vout(peak)/Vin(peak)
+Av= 0.3156/0.1004 = 3.143 V/V
+Converting it to the decibel(dB):
+20log(3.143) = 9.94 dB
+
+
+## AC Analysis
+
+
+
+
+#### **Objective:**
+The aim of AC analysis is to study the frequency-domain behavior of the MOS differential amplifier after replacing ( R_3 ) with ( I_{ss} ). Key parameters such as gain ( A_v), bandwidth, and common-mode rejection ratio (CMRR) will be determined.
+
+
+
+#### **Procedure:**
+1. **Circuit Configuration:**
+   - Replace ( R_3 ) with a current source (\( I_{ss} )) at the common source node.
+   - Maintain the rest of the circuit setup, including the differential MOSFET pair, load resistors, and supply voltage.
+
+2. **Input Signal:**
+   - Apply a small AC signal (e.g., 1 mV peak) to one of the differential inputs while grounding the other input.
+   - This ensures linear operation during the frequency sweep.
+
+3. **Simulation in LTSpice:**
+   - Configure AC analysis in LTSpice to sweep over a desired frequency range
+   - Use a logarithmic frequency scale for better resolution in observing gain across multiple decades.
+
+4. **Output Analysis:**
+   - Measure the differential output voltage ( V_{out+} - V_{out-} ) across the load resistors or active loads.
+
+From the graph gain in dB scale is
+20log(3.143)=9.94dB
+
 
