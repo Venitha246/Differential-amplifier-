@@ -127,3 +127,28 @@ Rss=250ohm
 
 
 
+
+## DC Analysis
+
+Mosfet aspect ratio was same ie, L= nm, W = um
+
+for mosfet M1 & M2:
+
+Vicm = 1.3V
+
+Vocm = 1.4V
+
+Id= 0.6mA
+
+Vtn = 0.487v
+
+VDD = IdRd + VDS +Vp
+
+2.5=0.6m(1.833k)+VDS+0.3
+
+VDS = 1.1002V
+
+The Q-point of both the mosfets are (1.1002V, 0.6mA).
+
+
+
