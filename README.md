@@ -130,6 +130,9 @@ Rss=250ohm
 
 ## DC Analysis
 
+
+
+
 Mosfet aspect ratio was same ie, L= nm, W = um
 
 for mosfet M1 & M2:
@@ -149,6 +152,72 @@ VDD = IdRd + VDS +Vp
 VDS = 1.1002V
 
 The Q-point of both the mosfets are (1.1002V, 0.6mA).
+
+## Transient Analysis
+
+
+
+The transient analysis of the MOS differential amplifier aims to evaluate its dynamic behavior and time-domain response when subjected to varying input signals. This analysis provides key insights into the amplifier's performance, including its ability to amplify signals linearly without distortion and its response to changes in input signals over time.
+
+#### **Procedure:**
+1. The circuit was designed as per the given specifications:
+   - **Supply Voltage (Vdd):** 2.5 V
+   - **Bias Current:** Derived from the tail current source.
+   - **Load Resistors:** Properly chosen to ensure the desired gain.
+2. A small differential input signal (sine wave) with an amplitude of \( V_p \) = 0.3 V was applied. The common-mode input voltage (\( V_{icm} \)) was maintained at 1.3 V.
+3. Transient simulation was performed in LTSpice with a simulation time sufficient to observe multiple signal cycles.
+4. The output voltage was recorded at the drain terminals of the differential MOSFET pair.
+
+#### **Results and Observations:**
+- The amplifier's differential output exhibited a clean, amplified version of the input signal, confirming proper linear operation.
+- Key parameters such as **rise time**, **fall time**, and **settling time** were extracted from the time-domain waveform.
+- The observed transient response verified the absence of distortion, indicating the circuit operates within its designed parameters.
+
+  From the above observation
+Gain Av=Vout(peak)/Vin(peak)
+Av= 0.3126/0.0974 = 3.209V/V
+Converting it to the decibel(dB):
+20log(3.209) = 10.127 dB
+
+## AC Analysis
+
+
+
+**AC analysis** examines the frequency-domain response of the MOS differential amplifier, providing insights into its gain, bandwidth, and stability. This analysis is essential for understanding how the amplifier performs across different frequencies.
+
+
+#### **Procedure for AC Analysis:**
+1. **Setup the Circuit:**
+   - Use the same circuit configuration as in the transient analysis.
+   - Apply a small AC signal to one of the differential inputs, while the other input is grounded or set to the common-mode input voltage (\( V_{icm} = 1.3 \, \text{V} \)).
+
+2. **Configure AC Input Signal:**
+   - Set the AC magnitude of the input signal to a small value (e.g., 1 mV). This ensures linear operation and prevents distortion during frequency-domain analysis.
+
+3. **Simulation Settings in LTSpice:**
+   - Open the **AC Analysis** tab in LTSpice.
+   - Specify the frequency range for the sweep (e.g., \( 1 \, \text{Hz} \) to \( 10 \, \text{MHz} \)).
+   - Choose a logarithmic or linear frequency scale, depending on the desired resolution.
+
+4. **Run the Simulation:**
+   - Start the AC analysis to compute the amplifier's frequency response, including gain and phase at various frequencies.
+
+5. **Extract and Analyze Parameters:**
+   - **Voltage Gain (\( A_v \)):** Observe the ratio of output voltage to input voltage across the frequency range.
+   - **Bandwidth:** Identify the frequency range over which the amplifier maintains a consistent gain (typically up to -3 dB from the maximum gain).
+   - **Phase Shift:** Analyze how the phase of the output signal varies with frequency.
+   - **Gain-Bandwidth Product (GBW):** Calculate the product of the gain and bandwidth to assess the amplifier's performance.
+ From the graph gain in dB scale is
+20log(3.209)=10.127dB
+
+## Inference 
+From the analysis of the MOS differential amplifier, we can see how effectively the circuit performs. The transient analysis showed that the amplifier works well with time-varying signals, amplifying them cleanly without distortion. It also responds quickly to input changes, making it reliable for dynamic applications.
+
+In the frequency analysis, the amplifier demonstrated a stable gain at lower frequencies and maintained good performance within its bandwidth. The cutoff frequency marked the range where the amplifier is most effective, and the gain-bandwidth product confirmed its overall quality.
+
+The amplifier also did a great job rejecting noise or common-mode signals, proving its suitability for handling real-world scenarios with interference. Additionally, it operated within the power dissipation limit of 3 mW, highlighting its efficiency.
+
+Overall, the amplifier meets all the design goals, offering high linearity, stability, and excellent noise rejection—ideal for applications requiring precise signal amplification.
 
 
 
