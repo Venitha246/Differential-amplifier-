@@ -283,9 +283,9 @@ The transient analysis evaluates the time-domain response of the fully different
 
 From the above observation
 Gain Av=Vout(peak)/Vin(peak)
-Av=  = V/V
+Av=1.5V/V
 Converting it to the decibel(dB):
-20log() = dB
+20log(1.5) = 3.52dB
 
 
 ## AC Analysis
@@ -316,7 +316,7 @@ The aim of AC analysis is to study the frequency-domain behavior of the MOS diff
    - Measure the differential output voltage ( V_{out+} - V_{out-} ) across the load resistors or active loads.
 
 From the graph gain in dB scale is
-20log()=
+20log(1.5)=3.528dB
 
 ## Inference
 By replacing ( R_3 ) with a current source (\( I_{ss} ), the circuit's performance significantly improved. This change increased the differential gain because there’s no source degeneration, allowing higher transconductance( g_m ) and better voltage gain ( A_d = g_m . r_d ). 
@@ -378,9 +378,9 @@ Additionally, the NMOS current source enhanced the circuit's ability to reject n
 
 From the above observation
 Gain Av=Vout(peak)/Vin(peak)
-Av= 0.3126/0.0974 =V/V
+Av =3V/V
 Converting it to the decibel(dB):
-20log() =
+20log(3) =9.493
 
 ## AC Analysis
 ![1000133911](https://github.com/user-attachments/assets/2897f5b3-36c2-405a-bf68-a84de989cb47)
@@ -392,7 +392,7 @@ In Circuit 3, using an NMOS transistor ( M_3 ) as a current source instead of a 
 The circuit maintained good performance across a broader range of frequencies, showing a wider bandwidth compared to the previous configurations. The NMOS current source also significantly improved noise rejection by enhancing the common-mode rejection ratio (CMRR), making the circuit more effective at rejecting unwanted signals or noise.
 
 From the graph gain in dB scale is
-20log()=dB
+20log(3)=9.493dB
 
 ## Inference 
 By replacing the tail resistor with an NMOS transistor (\( M_3 \)) as a current source, Circuit 3 showed significant improvements. This modification provided better stability and control over the bias current, ensuring that the operating point remained consistent. 
