@@ -369,4 +369,33 @@ Av= 0.3126/0.0974 = 3.209V/V
 Converting it to the decibel(dB):
 20log(3.209) = 10.127 dB
 
+## AC Analysis
 
+
+
+In Circuit 3, using an NMOS transistor ( M_3 ) as a current source instead of a tail resistor improved the amplifier's performance, especially in terms of gain and stability. During the AC analysis, the circuit showed a higher gain because the NMOS current source increased the output impedance. This enhanced the overall gain ( A_v = g_m . r_d ).
+
+The circuit maintained good performance across a broader range of frequencies, showing a wider bandwidth compared to the previous configurations. The NMOS current source also significantly improved noise rejection by enhancing the common-mode rejection ratio (CMRR), making the circuit more effective at rejecting unwanted signals or noise.
+
+From the graph gain in dB scale is
+20log(3.209)=10.127dB
+
+## Inference 
+By replacing the tail resistor with an NMOS transistor (\( M_3 \)) as a current source, Circuit 3 showed significant improvements. This modification provided better stability and control over the bias current, ensuring that the operating point remained consistent. 
+
+The transient and AC analyses confirmed that this change led to higher differential gain (\( A_d = g_m \cdot r_d \)) due to the increased transconductance and output impedance. The circuit's ability to handle signals over a wider range of frequencies was evident from its improved bandwidth. Additionally, the NMOS current source enhanced the circuit's noise rejection by improving the common-mode rejection ratio (CMRR). 
+
+Overall, this design made the amplifier more efficient, stable, and precise, which is especially beneficial for applications requiring high accuracy and reliability in signal amplification.
+
+## Summary 
+
+### **Circuit 1a: Basic Differential Amplifier**
+This circuit uses a resistive tail ( R_3 ) and serves as a simple design for amplifying differential signals. While effective for basic applications, its performance is limited due to source degeneration, which restricts the gain and reduces its ability to reject noise. The transient analysis showed clean but moderate amplification, and the AC analysis highlighted a reasonable bandwidth and gain suitable for simpler uses.
+
+
+### **Circuit 2: Differential Amplifier with a Current Source**
+In Circuit 2, the tail resistor ( R_3 ) is replaced by a current source ( I_{ss} ), which eliminates source degeneration and significantly improves the circuit's performance. The transient analysis revealed higher gain with clean output signals and better linearity. The AC analysis showed wider bandwidth and enhanced noise rejection through an improved common-mode rejection ratio (CMRR). This circuit is a step up from Circuit 1a, offering better performance and reliability.
+
+
+### **Circuit 3: Differential Amplifier with NMOS Current Source Biasing**
+Circuit 3 further improves the design by replacing the resistive tail with an NMOS transistor ( M_3 ) as a current source. This change provides more stability and precision in biasing the circuit. Transient analysis confirmed a high gain with excellent linearity and quick response to input changes. The AC analysis showed wider bandwidth and superior noise immunity, thanks to an even better CMRR. This circuit stands out as the most efficient and reliable for applications requiring precision and stability.
